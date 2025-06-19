@@ -1,27 +1,22 @@
 ---
-// Astroにようこそ！この3つのハイフンのコードフェンスの中にあるものは、
-// 「コンポーネントのフロントマター」です。ブラウザで実行されることはありません。
-console.log("ここはブラウザではなく、ターミナルで実行されます！");
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const pageTitle = "ホームページ";
 ---
 
-<!-- 以下は「コンポーネントテンプレート」です。単なるHTMLですが、
-    素晴らしいテンプレートを作成するための魔法が散りばめられています。 --><!doctype html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
-		<h1>Hello, World!</h1>
+		<Header />
+		<h1>{pageTitle}</h1>
+		<Footer />
 	</body>
-	<style>
-		h1 {
-			color: orange;
-		}
-	</style>
 </html>
