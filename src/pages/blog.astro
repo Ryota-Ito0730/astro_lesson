@@ -1,5 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+// const allPosts = await Astro.glob("../pages/posts/*.md");
+// Astro.globを記載後、下記注意が表示された
+// Astro.glob is deprecated and will be removed in a future major version of Astro.
+// Use import.meta.glob instead: https://vitejs.dev/guide/features.html#glob-import
+
+const allPosts = import.meta.glob("../pages/posts/*.md"); // 今後の推奨の書き方
 const pageTitle = "私のAstro学習ブログ";
 ---
 
